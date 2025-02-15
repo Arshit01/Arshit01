@@ -1,0 +1,143 @@
+(function ($) {
+	"use strict";
+
+	// Smooth scrolling using jQuery easing
+	let offsetTop = Math.floor($('#mainNav').height());
+	$('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
+		if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+			let target = $(this.hash);
+			target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+			if (target.length) {
+				$('html, body').animate({
+					scrollTop: (target.offset().top - offsetTop)
+				}, 1000, "easeInOutExpo");
+				return false;
+			}
+		}
+	});
+
+	// Closes responsive menu when a scroll trigger link is clicked
+	$('.js-scroll-trigger').on("click", function () {
+		$('.navbar-collapse').collapse('hide');
+		$('.plate').toggleClass('active');
+	});
+
+	$('.plate').click(function (e) {
+		e.preventDefault();
+		$('.plate').toggleClass('active');
+	});
+
+	// Activate scrollspy to add active class to navbar items on scroll
+	new bootstrap.ScrollSpy(document.body, {
+		target: '#mainNav',
+		offset: offsetTop
+	});
+
+	// Collapse Navbar
+	function navbarCollapse() {
+		if ($("#mainNav").offset().top > 100) {
+			$("#mainNav").addClass("navbar-shrink");
+		} else {
+			$("#mainNav").removeClass("navbar-shrink");
+		}
+	}
+
+	navbarCollapse();
+	$(window).on("scroll", navbarCollapse);
+
+	// Hide navbar when modals trigger
+	$('.portfolio-modal').on('show.bs.modal', function () {
+		$(".navbar").addClass("d-none");
+	});
+	$('.portfolio-modal').on('hidden.bs.modal', function () {
+		$(".navbar").removeClass("d-none");
+	});
+
+	// Scroll to top
+	if ($('#scroll-to-top').length) {
+		let scrollTrigger = 100;
+		function backToTop() {
+			let scrollTop = $(window).scrollTop();
+			if (scrollTop > scrollTrigger) {
+				$('#scroll-to-top').addClass('show');
+			} else {
+				$('#scroll-to-top').removeClass('show');
+			}
+		}
+		backToTop();
+		$(window).on('scroll', backToTop);
+		$('#scroll-to-top').on('click', function (e) {
+			e.preventDefault();
+			$('html,body').animate({
+				scrollTop: 0
+			}, 700);
+		});
+	}
+
+	// Banner
+	$('.heading').height($(window).height());
+
+	// Gallery Filter
+	// let Container = $('.container');
+	// Container.imagesLoaded().done(function () {
+	// 	let $grid = $('.gallery-list').isotope({
+	// 		itemSelector: '.gallery-grid'
+	// 	});
+	// 	$('.gallery-menu').on('click', 'button', function () {
+	// 		$(this).addClass('active').siblings().removeClass('active');
+	// 		let filterValue = $(this).attr('data-filter');
+	// 		$grid.isotope({ filter: filterValue });
+	// 	});
+	// });
+
+	// FUN FACTS
+	function count($this) {
+		let current = parseInt($this.html(), 10);
+		current = current + 50;
+		$this.html(++current);
+		if (current > $this.data('count')) {
+			$this.html($this.data('count'));
+		} else {
+			setTimeout(function () {
+				count($this);
+			}, 30);
+		}
+	}
+	$(".stat_count, .stat_count_download").each(function () {
+		$(this).data('count', parseInt($(this).html(), 10));
+		$(this).html('0');
+		count($(this));
+	});
+
+	// CONTACT
+	$(document).ready(function () {
+		$('#contactform').on("submit", function (event) {
+			event.preventDefault();
+			let action = $(this).attr('action');
+			$("#message").slideUp(750, function () {
+				$('#message').hide();
+				$('#submit')
+					.after('<img src="images/ajax-loader.gif" class="loader" />')
+					.attr('disabled', 'disabled');
+				$.post(action, {
+					first_name: $('#first_name').val(),
+					last_name: $('#last_name').val(),
+					email: $('#email').val(),
+					phone: $('#phone').val(),
+					select_service: $('#select_service').val(),
+					select_price: $('#select_price').val(),
+					comments: $('#comments').val(),
+					verify: $('#verify').val()
+				}, function (data) {
+					document.getElementById('message').innerHTML = data;
+					$('#message').slideDown('slow');
+					$('#contactform img.loader').fadeOut('slow', function () {
+						$(this).remove();
+					});
+					$('#submit').removeAttr('disabled');
+					if (data.match('success') != null) $('#contactform').slideUp('slow');
+				});
+			});
+		});
+	});
+})(jQuery);
