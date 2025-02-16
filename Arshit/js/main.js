@@ -1,17 +1,22 @@
 (function ($) {
 	"use strict";
 
-	// Smooth scrolling using jQuery easing
+	// Smooth scrolling using Gsap
 	let offsetTop = Math.floor($('#mainNav').height());
-	$('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
-		if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+	$(document).on("click", 'a.js-scroll-trigger[href*="#"]:not([href="#"])', function (event) {
+		if (
+			location.pathname.replace(/^\//, "") === this.pathname.replace(/^\//, "") &&
+			location.hostname === this.hostname
+		) {
 			let target = $(this.hash);
-			target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+			target = target.length ? target : $("[name=" + this.hash.slice(1) + "]");
 			if (target.length) {
-				$('html, body').animate({
-					scrollTop: (target.offset().top - offsetTop)
-				}, 1000, "easeInOutExpo");
-				return false;
+				gsap.to(window, {
+					duration: .5,
+					scrollTo: { y: target.offset().top - offsetTop },
+					ease: "power4.out"
+				});
+				event.preventDefault();
 			}
 		}
 	});
@@ -54,28 +59,33 @@
 	});
 
 	// Scroll to top
-	if ($('#scroll-to-top').length) {
+	if ($("#scroll-to-top").length) {
 		let scrollTrigger = 100;
+
 		function backToTop() {
 			let scrollTop = $(window).scrollTop();
 			if (scrollTop > scrollTrigger) {
-				$('#scroll-to-top').addClass('show');
+				$("#scroll-to-top").addClass("show");
 			} else {
-				$('#scroll-to-top').removeClass('show');
+				$("#scroll-to-top").removeClass("show");
 			}
 		}
+
 		backToTop();
-		$(window).on('scroll', backToTop);
-		$('#scroll-to-top').on('click', function (e) {
+		$(window).on("scroll", backToTop);
+
+		$("#scroll-to-top").on("click", function (e) {
 			e.preventDefault();
-			$('html,body').animate({
-				scrollTop: 0
-			}, 700);
+			gsap.to(window, {
+				duration: 1,
+				scrollTo: { y: 0 },
+				ease: "cubic-bezier(1,0,0,1)"
+			});
 		});
 	}
 
 	// Banner
-	$('.heading').height($(window).height());
+	$('.home-heading').height($(window).height());
 
 	// Gallery Filter
 	// let Container = $('.container');

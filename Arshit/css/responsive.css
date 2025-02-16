@@ -22,11 +22,11 @@
 		border-color: rgba(255, 255, 255);
 	}
 
-	.heading h1 {
+	.home-heading h1 {
 		font-size: 28px;
 	}
 
-	.heading p {
+	.home-heading p {
 		font-size: 14px;
 	}
 
@@ -89,11 +89,11 @@
 		border-color: rgba(255, 255, 255);
 	}
 
-	.heading h1 {
+	.home-heading h1 {
 		font-size: 28px;
 	}
 
-	.heading p {
+	.home-heading p {
 		font-size: 14px;
 	}
 
@@ -139,6 +139,10 @@
 }
 
 @media only screen and (min-width: 280px) and (max-width: 599px) {
+	.heading {
+		font-size: 40px;
+	}
+
 	#mainNav {
 		background-color: #3c096c;
 	}
@@ -157,11 +161,11 @@
 		border-color: rgba(255, 255, 255);
 	}
 
-	.heading h1 {
+	.home-heading h1 {
 		font-size: 28px;
 	}
 
-	.heading p {
+	.home-heading p {
 		font-size: 14px;
 	}
 
@@ -187,6 +191,41 @@
 
 	.message-box {
 		margin-bottom: 30px;
+	}
+
+	.work-education_timeline>div:last-child {
+		margin-top: 5rem;
+	}
+
+	.timeline_icon-wrap {
+		width: 4rem;
+		height: 4rem;
+		top: -2rem;
+	}
+
+	.timeline_icon {
+		width: 2rem;
+		height: 2rem;
+	}
+
+	.timeline_block {
+		margin-top: 1.5rem;
+	}
+
+	.timeline_bullet {
+		height: 2.6rem;
+	}
+
+	.timeline_timeframe {
+		font-size: 16px;
+	}
+
+	.timeline_header h3 {
+		font-size: 20px;
+	}
+
+	.timeline_header h5 {
+		font-size: 18px;
 	}
 
 	.filter-button-group button {

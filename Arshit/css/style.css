@@ -51,6 +51,26 @@ ol {
 	padding: 0px;
 }
 
+.heading {
+	font-family: 'Kelly Slab', serif;
+	font-size: 45px;
+	font-weight: 300;
+	padding: 0px 0 10px;
+	margin-top: 35px;
+	position: relative;
+	display: inline-block;
+}
+
+.heading::after {
+	content: '';
+	background: #902cbf;
+	position: absolute;
+	width: 80%;
+	height: 2px;
+	left: 10%;
+	bottom: 0px;
+}
+
 /*------------------------------------------------------------------
 	Header Navbar
 -------------------------------------------------------------------*/
@@ -126,7 +146,7 @@ ol {
 	background-repeat: no-repeat;
 }
 
-.heading {
+.home-heading {
 	color: #f9ebff;
 	display: table-cell;
 	vertical-align: middle;
@@ -134,7 +154,7 @@ ol {
 	z-index: 1;
 }
 
-.heading h1 {
+.home-heading h1 {
 	color: #f9ebff;
 	font-family: 'Kelly Slab', serif;
 	font-weight: 700;
@@ -142,12 +162,12 @@ ol {
 	text-transform: uppercase;
 }
 
-.heading p {
+.home-heading p {
 	font-size: 18px;
 	padding: 20px 0px;
 }
 
-.heading h3 {
+.home-heading h3 {
 	color: #f9ebff;
 	word-spacing: 5px;
 }
@@ -213,6 +233,7 @@ ol {
 	position: relative;
 	overflow: hidden;
 	padding: 50px 0;
+	box-shadow: 0px 0px 100px 90px #100f10;
 }
 
 .about-message h2 {
@@ -301,22 +322,10 @@ ol {
 }
 
 /*------------------------------------------------------------------
-	Work Section
+	Work & Education Section
 -------------------------------------------------------------------*/
-
-#work h2 {
-	font-family: 'Kelly Slab', serif;
-	font-size: 38px;
-	font-weight: 300;
-	padding: 0 0 10px;
-	margin: 0;
-	line-height: 62px;
-	margin-top: 0;
-	text-transform: none;
-}
-
-.about-experience__timeline {
-	margin-top: 1.6rem;
+.work-education_timeline {
+	margin-top: 3.6rem;
 }
 
 .timeline {
@@ -347,7 +356,7 @@ ol {
 	top: 0;
 }
 
-.timeline__icon-wrap {
+.timeline_icon-wrap {
 	width: 5rem;
 	height: 5rem;
 	position: absolute;
@@ -360,20 +369,18 @@ ol {
 	border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.timeline__icon {
+.timeline_icon {
 	width: 2.5rem;
 	height: 2.5rem;
 }
 
-.timeline__block {
+.timeline_block {
 	position: relative;
 	padding-left: 2.6rem;
-	padding-bottom: .8rem;
 	margin-top: 1.8rem;
-	/* min-height: 35.6rem; */
 }
 
-.timeline__bullet {
+.timeline_bullet {
 	content: "";
 	display: block;
 	width: 3px;
@@ -384,7 +391,7 @@ ol {
 	top: 8px;
 }
 
-.timeline__header .timeline__timeframe {
+.timeline_timeframe {
 	color: #FFF;
 	font-size: 20px;
 	font-weight: 600;
@@ -392,25 +399,53 @@ ol {
 	margin: 0;
 }
 
-.timeline__header h3 {
+.timeline_header h3 {
 	font-size: 25px;
 	margin: 0;
 }
 
-.timeline__header h5 {
+.timeline_header h5 {
+	font-size: 20px;
 	margin: 0;
 }
 
-.timeline__desc {
+.timeline_desc {
 	letter-spacing: 1px;
 	font-style: italic;
 }
 
+/*------------------------------------------------------------------
+	Capabilities Section
+-------------------------------------------------------------------*/
+.capabilities h4 {
+	font-weight: 600;
+}
 
+.cap-list {
+	margin-top: 2.5rem;
+	counter-reset: ctr;
+}
 
+.cap-list .item-cap {
+	margin-bottom: 2.4rem;
+	padding: 0 30px;
+}
 
+.cap-list .item-cap_content {
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	padding-top: 1.6rem;
+}
 
-
+.cap-list .item-cap_content::before {
+	display: block;
+	content: counter(ctr, decimal-leading-zero) ".";
+	counter-increment: ctr;
+	margin-bottom: 1rem;
+	font-weight: 300;
+	font-size: 5rem;
+	line-height: 1;
+	color: #902cbf;
+}
 
 
 
