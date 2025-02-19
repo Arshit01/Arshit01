@@ -123,7 +123,7 @@ $(window).on("load", () => {
 				const imgHolder = $(`
 					<div class="img-holder col-md-4" data-name="${category}" data-aos="fade-up">
 						<a href="${item.path}" data-size="${item.size}">
-							<img class="img-fluid" src="${item.path}" alt="${item.title}">
+							<img loading="lazy" class="img-fluid" src="${item.path}" alt="${item.title}">
 						</a>
 					</div>
 				`);
