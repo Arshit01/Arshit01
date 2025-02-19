@@ -447,6 +447,106 @@ ol {
 	color: #902cbf;
 }
 
+/*------------------------------------------------------------------
+	Achievements Section
+-------------------------------------------------------------------*/
+.gal-nav {
+	display: flex;
+	margin: 60px 60px 0;
+	justify-content: center;
+}
+
+.galNav-items {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.gal-nav-item {
+	padding: 5px 20px;
+	font-size: 20px;
+	cursor: pointer;
+	color: #902cbf;
+	border-radius: 50px;
+	border: 2px solid #902cbf;
+	transition: all 0.3s ease;
+}
+
+.gal-nav-item.active,
+.gal-nav-item:hover {
+	color: #f9ebff;
+	background: #902cbf;
+}
+
+.gallery {
+	margin-top: 30px;
+}
+
+.img-holder {
+	padding: 15px;
+}
+
+.img-holder img {
+	width: 100%;
+	transition: all 0.3s ease;
+	border-radius: 20px;
+}
+
+.img-holder:hover img {
+	transform: scale(1.1);
+}
+
+.img-holder.show {
+	animation: animate 0.5s ease;
+}
+
+@keyframes animate {
+	0% {
+		opacity: 0;
+		transform: rotate(40deg) scale(0);
+	}
+
+	100% {
+		opacity: 1;
+		transform: rotate(0) scale(1);
+	}
+}
+
+.pswp__caption__center {
+	text-align: center;
+	max-width: none;
+}
+
+.pswp__caption__center h3 {
+	color: #f9ebff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

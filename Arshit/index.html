@@ -8,6 +8,8 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendors/photoswipe/css/photoswipe.css">
+    <link rel="stylesheet" href="vendors/photoswipe/css/default-skin.css">
     <link rel="stylesheet" href="vendors/aos/css/aos.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -251,14 +253,76 @@
         </div>
     </section>
 
+    <!-- Achievements
+    ================================================== -->
+    <section id="achievements">
+        <div class="container">
+            <div class="row text-center" data-aos="fade-up">
+                <div class="col">
+                    <h2 class="heading">Achievements</h2>
+                </div>
+            </div>
+            <div class="gal-nav" data-aos="fade-up">
+                <div class="galNav-items">
+                    <span class="gal-nav-item active" data-name="cyber-security">Cyber Security</span>
+                    <span class="gal-nav-item" data-name="the-secops-group">The SecOps Group</span>
+                    <span class="gal-nav-item" data-name="fortinet">Fortinet</span>
+                    <span class="gal-nav-item" data-name="ec-council">EC-Council</span>
+                    <span class="gal-nav-item" data-name="forage">Forage</span>
+                    <span class="gal-nav-item" data-name="udemy">Udemy</span>
+                    <span class="gal-nav-item" data-name="others">Others</span>
+                </div>
+            </div>
+            <div class="gallery row" id="gallery" data-aos="fade-up"></div>
+        </div>
+    </section>
+    <!-- photoswipe background
+    ================================================== -->
+    <dialog aria-hidden="true" class="pswp" tabindex="-1">
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div>
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div>
+                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+
     <script src="vendors/jquery/jquery-3.7.1.min.js"></script>
-    <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
     <script src="vendors/jquery/imagesloaded.pkgd.min.js"></script>
+    <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendors/photoswipe/js/photoswipe.min.js"></script>
+    <script src="vendors/photoswipe/js/photoswipe-ui-default.min.js"></script>
     <script src="vendors/gsap/gsap.min.js"></script>
     <script src="vendors/gsap/ScrollToPlugin.min.js"></script>
     <script src="vendors/aos/js/aos.js"></script>
     <script src="vendors/fontawesome/js/all.min.js"></script>
     <script src="js/headline.js"></script>
+    <script src="js/certs.json.js"></script>
     <script src="js/main.js"></script>
 
     <script>

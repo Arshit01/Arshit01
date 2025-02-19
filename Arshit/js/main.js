@@ -1,3 +1,28 @@
+$(window).on("load", () => {
+	const filterItem = $(".galNav-items");
+	const gallery = $('#gallery');
+
+	function filterImages(filterName) {
+		gallery.find('.img-holder').each(function () {
+			let filterImges = $(this).data("name");
+			if ((filterImges == filterName)) {
+				$(this).removeClass("d-none").addClass("show");
+			} else {
+				$(this).addClass("d-none").removeClass("show");
+			}
+		});
+	}
+
+	filterImages('cyber-security');
+
+	filterItem.on("click", ".gal-nav-item", function () {
+		filterItem.find(".active").removeClass("active");
+		$(this).addClass("active");
+		let filterName = $(this).data("name");
+		filterImages(filterName);
+	});
+});
+
 (function ($) {
 	"use strict";
 
@@ -87,18 +112,71 @@
 	// Banner
 	$('.home-heading').height($(window).height());
 
-	// Gallery Filter
-	// let Container = $('.container');
-	// Container.imagesLoaded().done(function () {
-	// 	let $grid = $('.gallery-list').isotope({
-	// 		itemSelector: '.gallery-grid'
-	// 	});
-	// 	$('.gallery-menu').on('click', 'button', function () {
-	// 		$(this).addClass('active').siblings().removeClass('active');
-	// 		let filterValue = $(this).attr('data-filter');
-	// 		$grid.isotope({ filter: filterValue });
-	// 	});
-	// });
+	const gallery = $('#gallery');
+	const data = window.galData;
+
+	// Render images in the order specified by the nav items, excluding "all"
+	$(".gal-nav-item").not('[data-name="all"]').each(function () {
+		let category = $(this).data("name");
+		if (data[category]) {
+			data[category].forEach(item => {
+				const imgHolder = $(`
+					<div class="img-holder col-md-4" data-name="${category}" data-aos="fade-up">
+						<a href="${item.path}" data-size="${item.size}">
+							<img class="img-fluid" src="${item.path}" alt="${item.title}">
+						</a>
+					</div>
+				`);
+				gallery.append(imgHolder);
+			});
+		}
+	});
+
+	/* photoswipe
+	* ----------------------------------------------------- */
+	let PhotoswipeZoom = function () {
+		let items = [],
+			$pswp = $('.pswp')[0],
+			$imgHolder = $('.img-holder');
+
+		// get items
+		$imgHolder.each(function (i) {
+			let $imgItem = $(this),
+				$thumbLink = $imgItem.find('a'),
+				$title = '<h3>' + $imgItem.find('img').attr('alt') + '</h3>',
+				$href = $thumbLink.attr('href'),
+				$size = $thumbLink.data('size').split('x'),
+				$width = $size[0],
+				$height = $size[1];
+
+			let item = {
+				src: $href,
+				w: $width,
+				h: $height
+			}
+
+			if ($title.length > 0) {
+				item.title = $title;
+			}
+
+			items.push(item);
+		});
+
+		// bind click event
+		$imgHolder.each(function (i) {
+			$(this).find('a').on('click', function (e) {
+				e.preventDefault();
+				let options = {
+					index: i,
+					showHideOpacity: true
+				}
+				// initialize PhotoSwipe
+				let lightBox = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options);
+				lightBox.init();
+			});
+		});
+	};
+	PhotoswipeZoom();
 
 	// FUN FACTS
 	function count($this) {
