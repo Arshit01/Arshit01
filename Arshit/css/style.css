@@ -34,7 +34,6 @@ h6 {
 a,
 .btn {
 	text-decoration: none !important;
-	outline: none !important;
 	-webkit-transition: all .3s ease-in-out;
 	-moz-transition: all .3s ease-in-out;
 	-ms-transition: all .3s ease-in-out;
@@ -76,7 +75,7 @@ ol {
 .navbar-dark .navbar-nav .nav-link {
 	color: #f9ebff;
 	letter-spacing: 1px;
-	font-size: 16px;
+	font-size: 15px;
 	position: relative;
 }
 
@@ -105,6 +104,10 @@ ol {
 	width: 50%;
 }
 
+.nav-item:hover .nav-link::after {
+	width: 50%;
+}
+
 .navbar-brand {
 	font-size: 40px;
 	font-family: 'Young Serif', serif;
@@ -112,6 +115,117 @@ ol {
 
 .collapse {
 	flex-grow: 0;
+}
+
+/*------------------------------------------------------------------
+	Hamburger Menu
+-------------------------------------------------------------------*/
+#hamburger {
+	border: none;
+	padding: 0;
+}
+
+#hamburger svg {
+	height: 80px;
+	position: absolute;
+	width: 80px;
+}
+
+.plate {
+	height: 80px;
+	width: 80px;
+}
+
+.burger {
+	filter: url(#gooeyness);
+}
+
+.x {
+	transform: scale(0);
+	transition: transform 400ms;
+}
+
+.line {
+	fill: none;
+	stroke: #ffffff;
+	stroke-width: 6px;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	transform-origin: 50%;
+	transition: stroke-dasharray 500ms 200ms, stroke-dashoffset 500ms 200ms, transform 500ms 200ms;
+}
+
+.x .line {
+	stroke-width: 5.5px;
+}
+
+.active .x {
+	transform: scale(1);
+	transition: transform 400ms 350ms;
+}
+
+.plate .line1 {
+	stroke-dasharray: 21 185.62753295898438;
+	transition-delay: 0;
+}
+
+.plate .line2 {
+	stroke-dasharray: 21 178.6514129638672;
+	transition-delay: 30ms;
+}
+
+.plate .line3 {
+	stroke-dasharray: 21 197.92425537109375;
+	transition-delay: 60ms;
+}
+
+.plate .line4 {
+	stroke-dasharray: 21 190.6597137451172;
+	transition-delay: 90ms;
+}
+
+.plate .line5 {
+	stroke-dasharray: 21 208.52874755859375;
+	transition-delay: 120ms;
+}
+
+.plate .line6 {
+	stroke-dasharray: 21 186.59703063964844;
+	transition-delay: 150ms;
+}
+
+.active.plate .line1 {
+	stroke-dasharray: 5 185.62753295898438;
+	stroke-dashoffset: -141px;
+}
+
+.active.plate .line2 {
+	stroke-dasharray: 5 178.6514129638672;
+	stroke-dashoffset: -137px;
+}
+
+.active.plate .line3 {
+	stroke-dasharray: 5 197.92425537109375;
+	stroke-dashoffset: -176px;
+}
+
+.active.plate .line4 {
+	stroke-dasharray: 5 190.6597137451172;
+	stroke-dashoffset: -159px;
+}
+
+.active.plate .line5 {
+	stroke-dasharray: 5 208.52874755859375;
+	stroke-dashoffset: -139px;
+}
+
+.active.plate .line6 {
+	stroke-dasharray: 5 186.59703063964844;
+	stroke-dashoffset: -176px;
+}
+
+.active.plate .x {
+	transition: transform 400ms 250ms;
 }
 
 /*------------------------------------------------------------------
@@ -520,160 +634,86 @@ ol {
 	color: #f9ebff;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*------------------------------------------------------------------
-	Hamburger Menu
+	Footer Section
 -------------------------------------------------------------------*/
-#hamburger {
-	border: none;
-	padding: 0;
+#connect {
+	background-color: #2c2c2c;
 }
 
-#hamburger svg {
-	height: 80px;
+.f-heading {
+	display: inline-block;
+	position: relative;
+	font-size: 22px;
+	margin-bottom: 15px;
+	color: #f9ebff;
+}
+
+.f-heading::after {
+	content: '';
+	width: 75%;
+	height: 2px;
+	bottom: 4px;
+	left: 0;
 	position: absolute;
-	width: 80px;
+	background: #902cbf;
 }
 
-.plate {
-	height: 80px;
-	width: 80px;
+.f-social {
+	width: 60%;
 }
 
-.burger {
-	filter: url(#gooeyness);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#scroll-to-top {
+	background-color: #902cbf;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+	width: 50px;
+	height: 50px;
+	position: fixed;
+	bottom: -100px;
+	right: 35px;
+	font-size: 28px;
+	color: #f9ebff;
+	cursor: pointer;
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	-ms-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
 }
 
-.x {
-	transform: scale(0);
-	transition: transform 400ms;
+#scroll-to-top:hover {
+	background-color: #100f10;
+	color: #902cbf;
+	border: 1px solid #902cbf;
 }
 
-.line {
-	fill: none;
-	stroke: #ffffff;
-	stroke-width: 6px;
-	stroke-linecap: round;
-	stroke-linejoin: round;
-	transform-origin: 50%;
-	transition: stroke-dasharray 500ms 200ms, stroke-dashoffset 500ms 200ms, transform 500ms 200ms;
-}
-
-.x .line {
-	stroke-width: 5.5px;
-}
-
-.active .x {
-	transform: scale(1);
-	transition: transform 400ms 350ms;
-}
-
-.plate .line1 {
-	stroke-dasharray: 21 185.62753295898438;
-	transition-delay: 0;
-}
-
-.plate .line2 {
-	stroke-dasharray: 21 178.6514129638672;
-	transition-delay: 30ms;
-}
-
-.plate .line3 {
-	stroke-dasharray: 21 197.92425537109375;
-	transition-delay: 60ms;
-}
-
-.plate .line4 {
-	stroke-dasharray: 21 190.6597137451172;
-	transition-delay: 90ms;
-}
-
-.plate .line5 {
-	stroke-dasharray: 21 208.52874755859375;
-	transition-delay: 120ms;
-}
-
-.plate .line6 {
-	stroke-dasharray: 21 186.59703063964844;
-	transition-delay: 150ms;
-}
-
-.active.plate .line1 {
-	stroke-dasharray: 5 185.62753295898438;
-	stroke-dashoffset: -141px;
-}
-
-.active.plate .line2 {
-	stroke-dasharray: 5 178.6514129638672;
-	stroke-dashoffset: -137px;
-}
-
-.active.plate .line3 {
-	stroke-dasharray: 5 197.92425537109375;
-	stroke-dashoffset: -176px;
-}
-
-.active.plate .line4 {
-	stroke-dasharray: 5 190.6597137451172;
-	stroke-dashoffset: -159px;
-}
-
-.active.plate .line5 {
-	stroke-dasharray: 5 208.52874755859375;
-	stroke-dashoffset: -139px;
-}
-
-.active.plate .line6 {
-	stroke-dasharray: 5 186.59703063964844;
-	stroke-dashoffset: -176px;
-}
-
-.active.plate .x {
-	transition: transform 400ms 250ms;
+#scroll-to-top.show {
+	bottom: 50px;
 }

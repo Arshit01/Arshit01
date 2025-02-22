@@ -2,6 +2,10 @@
 	.main-banner::before {
 		background-size: 100dvw 100dvh;
 	}
+
+	.f-social {
+		width: 55%;
+	}
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -49,26 +53,6 @@
 	#about {
 		padding: 20px 0px;
 	}
-
-	.message-box {
-		margin-bottom: 30px;
-	}
-
-	.filter-button-group button {
-		padding: 12px 27px;
-	}
-
-	.filter-button-group {
-		text-align: center !important;
-	}
-
-	.post-box {
-		margin-bottom: 30px;
-	}
-
-	.footer-distributed .footer-left {
-		text-align: center;
-	}
 }
 
 @media (max-width: 767px) {
@@ -115,26 +99,6 @@
 
 	#about {
 		padding: 20px 0px;
-	}
-
-	.message-box {
-		margin-bottom: 30px;
-	}
-
-	.filter-button-group button {
-		padding: 12px 27px;
-	}
-
-	.filter-button-group {
-		text-align: center !important;
-	}
-
-	.post-box {
-		margin-bottom: 30px;
-	}
-
-	.footer-distributed .footer-left {
-		text-align: center;
 	}
 }
 
@@ -246,20 +210,9 @@
 		margin: 4px;
 	}
 
-	.filter-button-group button {
-		padding: 12px 27px;
+	#scroll-to-top {
+		height: 38px;
+		width: 38px;
+		right: 20px;
 	}
-
-	.filter-button-group {
-		text-align: center !important;
-	}
-
-	.post-box {
-		margin-bottom: 30px;
-	}
-
-	.footer-distributed .footer-left {
-		text-align: center;
-	}
-
 }

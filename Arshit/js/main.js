@@ -37,7 +37,7 @@ $(window).on("load", () => {
 			target = target.length ? target : $("[name=" + this.hash.slice(1) + "]");
 			if (target.length) {
 				gsap.to(window, {
-					duration: .5,
+					duration: 1,
 					scrollTo: { y: target.offset().top - offsetTop },
 					ease: "power4.out"
 				});
@@ -104,7 +104,7 @@ $(window).on("load", () => {
 			gsap.to(window, {
 				duration: 1,
 				scrollTo: { y: 0 },
-				ease: "cubic-bezier(1,0,0,1)"
+				ease: "power4.out"
 			});
 		});
 	}
@@ -177,55 +177,4 @@ $(window).on("load", () => {
 		});
 	};
 	PhotoswipeZoom();
-
-	// FUN FACTS
-	function count($this) {
-		let current = parseInt($this.html(), 10);
-		current = current + 50;
-		$this.html(++current);
-		if (current > $this.data('count')) {
-			$this.html($this.data('count'));
-		} else {
-			setTimeout(function () {
-				count($this);
-			}, 30);
-		}
-	}
-	$(".stat_count, .stat_count_download").each(function () {
-		$(this).data('count', parseInt($(this).html(), 10));
-		$(this).html('0');
-		count($(this));
-	});
-
-	// CONTACT
-	$(document).ready(function () {
-		$('#contactform').on("submit", function (event) {
-			event.preventDefault();
-			let action = $(this).attr('action');
-			$("#message").slideUp(750, function () {
-				$('#message').hide();
-				$('#submit')
-					.after('<img src="images/ajax-loader.gif" class="loader" />')
-					.attr('disabled', 'disabled');
-				$.post(action, {
-					first_name: $('#first_name').val(),
-					last_name: $('#last_name').val(),
-					email: $('#email').val(),
-					phone: $('#phone').val(),
-					select_service: $('#select_service').val(),
-					select_price: $('#select_price').val(),
-					comments: $('#comments').val(),
-					verify: $('#verify').val()
-				}, function (data) {
-					document.getElementById('message').innerHTML = data;
-					$('#message').slideDown('slow');
-					$('#contactform img.loader').fadeOut('slow', function () {
-						$(this).remove();
-					});
-					$('#submit').removeAttr('disabled');
-					if (data.match('success') != null) $('#contactform').slideUp('slow');
-				});
-			});
-		});
-	});
 })(jQuery);
