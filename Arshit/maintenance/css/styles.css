@@ -129,6 +129,7 @@ html {
     width: 50%;
     position: relative;
     padding: 0 60px;
+    align-content: center;
 }
 
 .right-section .content {
@@ -145,7 +146,6 @@ html {
 }
 
 .right-section .footer-icons {
-    position: absolute;
     bottom: 30px;
     font-size: 1.7em;
 }

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-OUTPUT_FILE="js/certs.json.js"
+OUTPUT_FILE="js/certs.json"
 BASE_DIR="certificates"  # Running script inside certificates folder
 
 # Initialize JSON output
