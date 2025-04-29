@@ -51,10 +51,25 @@ window.galData = {
     }
   ]
 ,
-  "opswat": [
+"opswat": [
+    {
+      "path": "certificates/opswat/Introduction To CIP.png",
+      "title": "Introduction To CIP",
+      "size": "900x723"
+    },
     {
       "path": "certificates/opswat/Cybersecurity Fundamentals Associate.png",
       "title": "Cybersecurity Fundamentals Associate",
+      "size": "900x711"
+    },
+    {
+      "path": "certificates/opswat/Network Security Associate.png",
+      "title": "Network Security Associate",
+      "size": "900x711"
+    },
+    {
+      "path": "certificates/opswat/Web Traffic Protection Associate.png",
+      "title": "Web Traffic Protection Associate",
       "size": "900x711"
     },
     {
@@ -68,9 +83,14 @@ window.galData = {
       "size": "900x712"
     },
     {
-      "path": "certificates/opswat/Introduction To CIP.png",
-      "title": "Introduction To CIP",
-      "size": "900x723"
+      "path": "certificates/opswat/Data Transfer Security Associate.png",
+      "title": "Data Transfer Security Associate",
+      "size": "900x711"
+    },
+    {
+      "path": "certificates/opswat/File Security Associate.png",
+      "title": "File Security Associate",
+      "size": "900x711"
     },
     {
       "path": "certificates/opswat/Legacy System Security Associate.png",
@@ -78,13 +98,8 @@ window.galData = {
       "size": "900x711"
     },
     {
-      "path": "certificates/opswat/Network Security Associate.png",
-      "title": "Network Security Associate",
-      "size": "900x711"
-    },
-    {
-      "path": "certificates/opswat/Web Traffic Protection Associate.png",
-      "title": "Web Traffic Protection Associate",
+      "path": "certificates/opswat/Secure Storage Associate.png",
+      "title": "Secure Storage Associate",
       "size": "900x711"
     }
   ]
