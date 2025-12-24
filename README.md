@@ -103,7 +103,7 @@
 
 [![GitHub](https://img.shields.io/badge/GitHub-181717.svg?style=for-the-badge&logo=GitHub&logoColor=white)](https://github.com/Arshit01)
 [![Stack_Overflow](https://img.shields.io/badge/Stack_Overflow-F58025.svg?style=for-the-badge&logo=Stack-Overflow&logoColor=white)](https://stackoverflow.com/users/14319384/vora-arshit)
-[![HTB](https://img.shields.io/badge/Hack_The_Box-9FEF00.svg?style=for-the-badge&logo=Hack-The-Box&logoColor=black)](https://app.hackthebox.com/users/896637)
+[![HTB](https://img.shields.io/badge/Hack_The_Box-9FEF00.svg?style=for-the-badge&logo=Hack-The-Box&logoColor=black)](https://app.hackthebox.com/public/users/896637)
 [![TryHackMe](https://img.shields.io/badge/TryHackMe-212C42.svg?style=for-the-badge&logo=TryHackMe&logoColor=white)](https://tryhackme.com/p/BrightLion)
 
 </div>
